@@ -5,8 +5,10 @@ pipeline {
         maven 'MVN_3.6.1' 
     }
     stage{
-        stage('gitclone'}
+        stage('gitclone'){
+            steps{     
               git branch: 'code-pipeline', url: 'https://github.com/ankitkcc492/jenkins.git'
+        }
     }
     stages {
         stage('Compile stage') {
@@ -28,3 +30,4 @@ pipeline {
         }
 
   }
+    }
