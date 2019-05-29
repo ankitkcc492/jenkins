@@ -1,12 +1,15 @@
 pipeline {
     agent any
-    tools {
+    stage{
+	    stage('maven home'){
+	tools {
         maven 'MVN_3.6.1' 
     }
+	   }
     stage{
         stage('gitclone'){
             steps{     
-              git branch: 'code-pipeline', url: 'https://github.com/ankitkcc492/jenkins.git'
+              git branch: 'dec', url: 'https://github.com/ankitkcc492/jenkins.git'
         }
     }
     stages {
@@ -30,3 +33,4 @@ pipeline {
     }
   }
     }
+	     }
